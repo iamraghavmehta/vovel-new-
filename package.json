@@ -1,0 +1,28 @@
+{
+  "name": "vovel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VOVEL — Find your words. A personal vocabulary archive with spaced repetition.",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "tsx --test tests/engine.test.ts",
+    "build": "bash scripts/build.sh",
+    "e2e": "npm run build && node tests/e2e/journey.mjs",
+    "serve": "npm run build && npx http-server dist -p 5173 -c-1",
+    "test:rls": "bash supabase/tests/run_rls.sh"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "playwright": "1.63.0",
+    "tsx": "4.23.12",
+    "typescript": "^7.0.2"
+  },
+  "engines": { "node": ">=22" }
+}
